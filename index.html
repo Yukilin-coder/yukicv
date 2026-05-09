@@ -1,0 +1,1533 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>林宇箫 | 品牌内容策划作品集</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #faf9f7;
+            --bg-dark: #1a1a2e;
+            --bg-card: #ffffff;
+            --accent: #c9a96e;
+            --accent-light: #e8d5b0;
+            --text-primary: #2d2d2d;
+            --text-secondary: #666666;
+            --text-light: #999999;
+            --border: #e8e8e8;
+            --shadow: rgba(0,0,0,0.06);
+            --shadow-hover: rgba(0,0,0,0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* ===== Navigation ===== */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(250,249,247,0.92);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 36px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        /* ===== Hero Section ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 32px 80px;
+            background: linear-gradient(135deg, #faf9f7 0%, #f0ede8 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, var(--accent-light) 0%, transparent 70%);
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        .hero .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            width: 100%;
+        }
+
+        .hero-content {
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-label {
+            display: inline-block;
+            padding: 6px 16px;
+            background: rgba(201,169,110,0.12);
+            color: var(--accent);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-radius: 100px;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+            font-weight: 400;
+        }
+
+        .hero-desc {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 36px;
+            max-width: 480px;
+            line-height: 1.8;
+        }
+
+        .hero-contact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-bottom: 36px;
+        }
+
+        .hero-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .hero-contact-item svg {
+            width: 16px;
+            height: 16px;
+            color: var(--accent);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-size: 0.9375rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--bg-dark);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: #2a2a4e;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(26,26,46,0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 1.5px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .photo-placeholder {
+            width: 380px;
+            height: 480px;
+            background: linear-gradient(145deg, #e8e4df, #d4cfc8);
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: var(--text-light);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+
+        .photo-placeholder::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a96e' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.6;
+        }
+
+        .photo-placeholder svg {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 16px;
+            opacity: 0.3;
+        }
+
+        .photo-placeholder p {
+            font-size: 0.875rem;
+            opacity: 0.6;
+        }
+
+        /* ===== Section Common ===== */
+        section {
+            padding: 100px 32px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .section-header h2 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+
+        .section-header p {
+            font-size: 1.0625rem;
+            color: var(--text-secondary);
+            max-width: 560px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            display: inline-block;
+            padding: 4px 14px;
+            background: rgba(201,169,110,0.1);
+            color: var(--accent);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            border-radius: 100px;
+            margin-bottom: 16px;
+        }
+
+        /* ===== About Section ===== */
+        .about {
+            background: var(--bg-card);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .about-info h3 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .about-info p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            line-height: 1.8;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 24px;
+        }
+
+        .skill-tag {
+            padding: 6px 16px;
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            font-size: 0.8125rem;
+            color: var(--text-secondary);
+            transition: all 0.3s;
+        }
+
+        .skill-tag:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: rgba(201,169,110,0.05);
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 32px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 6px;
+            top: 8px;
+            bottom: 8px;
+            width: 1px;
+            background: var(--border);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 28px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 6px;
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: 2px solid var(--bg-card);
+            box-shadow: 0 0 0 3px rgba(201,169,110,0.2);
+        }
+
+        .timeline-item h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .timeline-item .company {
+            font-size: 0.875rem;
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .timeline-item .time {
+            font-size: 0.8125rem;
+            color: var(--text-light);
+            margin-bottom: 8px;
+        }
+
+        .timeline-item p {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* ===== TVC Section ===== */
+        .tvc-section {
+            background: var(--bg-dark);
+            color: #fff;
+        }
+
+        .tvc-section .section-header h2,
+        .tvc-section .section-header p {
+            color: #fff;
+        }
+
+        .tvc-section .section-label {
+            background: rgba(201,169,110,0.15);
+            color: var(--accent-light);
+        }
+
+        .tvc-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+        }
+
+        .tvc-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .tvc-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(201,169,110,0.3);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: #0a0a1a;
+        }
+
+        .video-wrapper video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .video-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: rgba(255,255,255,0.3);
+            gap: 12px;
+        }
+
+        .video-placeholder svg {
+            width: 48px;
+            height: 48px;
+            opacity: 0.5;
+        }
+
+        .tvc-content {
+            padding: 28px;
+        }
+
+        .tvc-tags {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 14px;
+            flex-wrap: wrap;
+        }
+
+        .tvc-tag {
+            padding: 3px 10px;
+            background: rgba(201,169,110,0.12);
+            color: var(--accent-light);
+            font-size: 0.6875rem;
+            font-weight: 500;
+            border-radius: 4px;
+            letter-spacing: 0.5px;
+        }
+
+        .tvc-content h3 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.25rem;
+            margin-bottom: 6px;
+            color: #fff;
+        }
+
+        .tvc-content .subtitle {
+            font-size: 0.875rem;
+            color: var(--accent-light);
+            margin-bottom: 14px;
+            font-weight: 500;
+        }
+
+        .tvc-content .desc {
+            font-size: 0.875rem;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.8;
+            margin-bottom: 18px;
+        }
+
+        .tvc-data {
+            display: flex;
+            gap: 24px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .tvc-data-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tvc-data-item .number {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--accent-light);
+        }
+
+        .tvc-data-item .label {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.4);
+            margin-top: 2px;
+        }
+
+        /* ===== Social Media Section ===== */
+        .social-section {
+            background: var(--bg-primary);
+        }
+
+        .social-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .xhs-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 24px;
+            padding: 12px 28px;
+            background: #ff2442;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 100px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .xhs-btn:hover {
+            background: #e01d3a;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255,36,66,0.3);
+        }
+
+        .social-content h3 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.75rem;
+            margin-bottom: 20px;
+        }
+
+        .social-content p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            line-height: 1.8;
+        }
+
+        .social-list {
+            list-style: none;
+            margin-top: 24px;
+        }
+
+        .social-list li {
+            padding: 14px 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .social-list li:last-child {
+            border-bottom: none;
+        }
+
+        .social-list .platform {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 500;
+        }
+
+        .social-list .platform-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .social-list .achievement {
+            font-size: 0.8125rem;
+            color: var(--text-light);
+        }
+
+        /* ===== Articles Section ===== */
+        .articles-section {
+            background: var(--bg-card);
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .article-card {
+            background: var(--bg-primary);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: all 0.4s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .article-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 40px var(--shadow-hover);
+            border-color: var(--accent-light);
+        }
+
+        .article-cover {
+            height: 180px;
+            background: linear-gradient(135deg, #1a1a2e, #3a3a5e);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,0.4);
+            font-size: 0.875rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-cover::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .article-cover span {
+            position: relative;
+            z-index: 1;
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.25rem;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .article-body {
+            padding: 24px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .article-body h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            line-height: 1.5;
+            color: var(--text-primary);
+        }
+
+        .article-body p {
+            font-size: 0.8125rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            flex: 1;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+        }
+
+        .article-meta .source {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .article-meta .views {
+            font-size: 0.75rem;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .article-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            margin-top: 16px;
+            font-size: 0.8125rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            transition: gap 0.3s;
+        }
+
+        .article-link:hover {
+            gap: 8px;
+        }
+
+        /* ===== Reports Section ===== */
+        .reports-section {
+            background: var(--bg-primary);
+        }
+
+        .reports-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .report-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .report-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 40px var(--shadow-hover);
+        }
+
+        .report-cover {
+            height: 200px;
+            width: 100%;
+            position: relative;
+        }
+
+        .report-cover::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: linear-gradient(to top, var(--bg-card), transparent);
+        }
+
+        .report-body {
+            padding: 24px 28px 28px;
+        }
+
+        .report-body h3 {
+            font-size: 1.0625rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .report-body p {
+            font-size: 0.8125rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .report-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .report-meta .year {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            padding: 4px 10px;
+            background: var(--bg-primary);
+            border-radius: 4px;
+        }
+
+        .report-link {
+            font-size: 0.8125rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: gap 0.3s;
+        }
+
+        .report-link:hover {
+            gap: 8px;
+        }
+
+        /* Phone mockup for XHS */
+        .phone-mockup {
+            width: 420px;
+            margin: 0 auto;
+            border-radius: 40px;
+            border: 10px solid #1a1a2e;
+            overflow: hidden;
+            box-shadow: 0 24px 60px rgba(0,0,0,0.18);
+            position: relative;
+            background: #1a1a2e;
+        }
+
+        .phone-mockup::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 24px;
+            background: #1a1a2e;
+            border-radius: 0 0 14px 14px;
+            z-index: 2;
+        }
+
+        .phone-mockup img {
+            width: 100%;
+            display: block;
+            border-radius: 26px;
+        }
+
+        .phone-mockup::after {
+            content: '';
+            position: absolute;
+            bottom: 6px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 2px;
+            z-index: 2;
+        }
+
+        /* ===== Footer ===== */
+        footer {
+            background: var(--bg-dark);
+            color: #fff;
+            padding: 80px 32px 40px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand h3 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+        }
+
+        .footer-brand p {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.875rem;
+            line-height: 1.8;
+            max-width: 320px;
+        }
+
+        .footer-links h4 {
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: rgba(255,255,255,0.8);
+            letter-spacing: 1px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-light);
+        }
+
+        .footer-contact p {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.875rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 32px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-bottom p {
+            font-size: 0.8125rem;
+            color: rgba(255,255,255,0.3);
+        }
+
+        /* ===== Animations ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 1024px) {
+            .hero .container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 48px;
+            }
+
+            .hero-contact {
+                justify-content: center;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-desc {
+                margin: 0 auto 36px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .social-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tvc-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .articles-grid,
+            .reports-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            section {
+                padding: 64px 24px;
+            }
+
+            .hero-image img {
+                width: 280px;
+                height: 360px;
+            }
+
+            .phone-mockup {
+                width: 320px;
+                border-radius: 32px;
+                border-width: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav id="navbar">
+    <div class="container">
+        <div class="logo">林宇箫</div>
+        <ul class="nav-links">
+            <li><a href="#about">关于我</a></li>
+            <li><a href="#tvc">TVC作品</a></li>
+            <li><a href="#social">社交媒体</a></li>
+            <li><a href="#articles">深度文章</a></li>
+            <li><a href="#reports">数据报告</a></li>
+            <li><a href="#contact">联系我</a></li>
+        </ul>
+        <button class="mobile-menu-btn" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="3" y1="6" x2="21" y2="6"/>
+                <line x1="3" y1="12" x2="21" y2="12"/>
+                <line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+        </button>
+    </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="home">
+    <div class="container">
+        <div class="hero-content">
+            <span class="hero-label">Portfolio 2025</span>
+            <h1>林宇箫<br><span>品牌内容策划</span></h1>
+            <p class="hero-subtitle">5年品牌内容策划经验 · 从战略到落地的全案操盘手</p>
+            <p class="hero-desc">擅长从品牌战略出发主导长视频/TVC全案策划与落地，具备完整内容项目操盘经验。从宝马雇主品牌TVC到社交媒体矩阵运营，从10w+爆款文章到行业数据白皮书，用内容连接品牌与用户。</p>
+            <div class="hero-contact">
+                <div class="hero-contact-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    13120027231
+                </div>
+                <div class="hero-contact-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    13120027231@163.com
+                </div>
+                <div class="hero-contact-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    北京
+                </div>
+            </div>
+            <div class="hero-buttons">
+                <a href="#tvc" class="btn btn-primary">查看作品</a>
+                <a href="林宇箫-品牌内容策划-0427.pdf" class="btn btn-secondary" target="_blank">下载简历</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="证件照.jpg" alt="林宇箫" style="width:380px;height:480px;object-fit:cover;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,0.1);">
+        </div>
+    </div>
+</section>
+
+<!-- About -->
+<section class="about" id="about">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-label">About Me</span>
+            <h2>关于我</h2>
+            <p>从人大人力资源管理到品牌内容策划，用数据洞察与创意叙事构建品牌与用户的桥梁</p>
+        </div>
+        <div class="about-grid reveal">
+            <div class="about-info">
+                <h3>核心能力</h3>
+                <p>拥有5年品牌内容策划经验，擅长从品牌战略出发主导长视频/TVC全案策划与落地。具备完整内容项目操盘经验，曾打造视频号同类播放量第一、公众号10w+爆款案例。</p>
+                <p>内容方案独立撰写经验丰富，LinkedIn专栏作者，脉脉人才智库主笔，曾打造微博热搜第一话题。擅长社交媒体运营和热点捕捉，个人小红书账号粉丝3000+，多篇千赞爆款。</p>
+                <p>此外，擅长搭建AI Agent赋能内容创作，基于Claude Code搭建竞品与行业内容追踪Agent，英语可作为工作语言。</p>
+                <div class="skills">
+                    <span class="skill-tag">TVC全案策划</span>
+                    <span class="skill-tag">品牌策略</span>
+                    <span class="skill-tag">社交媒体运营</span>
+                    <span class="skill-tag">内容营销</span>
+                    <span class="skill-tag">脚本撰写</span>
+                    <span class="skill-tag">数据洞察</span>
+                    <span class="skill-tag">AI Agent搭建</span>
+                    <span class="skill-tag">竞品分析</span>
+                    <span class="skill-tag">短视频运营</span>
+                    <span class="skill-tag">中英文案</span>
+                </div>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h4>华晨宝马</h4>
+                    <div class="company">品牌内容策划</div>
+                    <div class="time">2023.03 - 至今</div>
+                    <p>主导宝马3系50周年TVC全案策划，负责雇主品牌TVC创意到落地全流程，统筹产品内容资产库管理，搭建AI Agent赋能行业趋势调研。</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>脉脉</h4>
+                    <div class="company">内容营销</div>
+                    <div class="time">2021.10 - 2023.03</div>
+                    <p>建设脉脉人才智库内容IP，独立撰写《人工智能顶尖人才数据图鉴2022》白皮书，相关话题登上微博热搜第一，曝光量3.3亿。</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>猿辅导</h4>
+                    <div class="company">内容策划</div>
+                    <div class="time">2021.06 - 2021.10</div>
+                    <p>参与冬奥会、WWF、环球影城等IP合作活动策划，运营微信/微博/抖音自媒体矩阵，推出多篇10w+文章。</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>LinkedIn</h4>
+                    <div class="company">内容运营实习生</div>
+                    <div class="time">2019.11 - 2020.08</div>
+                    <p>策划爆款选题，已发表多篇阅读量10万+文章，撰写"数字游民"主题视频脚本，B站播放量6.2万。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TVC Works -->
+<section class="tvc-section" id="tvc">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-label">TVC Works</span>
+            <h2>品牌TVC作品</h2>
+            <p>从创意概念到传播落地，用影像叙事传递品牌价值</p>
+        </div>
+        <div class="tvc-grid">
+            <!-- TVC 1: 绿皮猫 -->
+            <div class="tvc-card reveal">
+                <div class="video-wrapper">
+                    <video controls poster="绿皮猫.jpg" preload="metadata">
+                        <source src="绿皮猫.MP4" type="video/mp4">
+                        您的浏览器不支持视频播放。
+                    </video>
+                </div>
+                <div class="tvc-content">
+                    <div class="tvc-tags">
+                        <span class="tvc-tag">雇主品牌</span>
+                        <span class="tvc-tag">TVC</span>
+                        <span class="tvc-tag">全流程策划</span>
+                    </div>
+                    <h3>寻找绿皮猫</h3>
+                    <p class="subtitle">宝马中国首支雇主品牌TVC</p>
+                    <p class="desc">从创意概念到传播落地的全流程策划，独立完成brief撰写，协调内外部资源保障项目按节点交付。针对目标人群制定精准投放策略，以"绿皮猫"为隐喻，传递宝马中国独特的企业文化与雇主价值，实现品牌价值本土化表达。</p>
+                    <div class="tvc-data">
+                        <div class="tvc-data-item">
+                            <span class="number">7.5w+</span>
+                            <span class="label">单篇浏览量</span>
+                        </div>
+                        <div class="tvc-data-item">
+                            <span class="number">首支</span>
+                            <span class="label">雇主品牌TVC</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TVC 2: 绿皮熊 -->
+            <div class="tvc-card reveal">
+                <div class="video-wrapper">
+                    <video controls poster="绿皮熊.jpg" preload="metadata">
+                        <source src="绿皮熊.MP4" type="video/mp4">
+                        您的浏览器不支持视频播放。
+                    </video>
+                </div>
+                <div class="tvc-content">
+                    <div class="tvc-tags">
+                        <span class="tvc-tag">雇主品牌</span>
+                        <span class="tvc-tag">系列IP</span>
+                        <span class="tvc-tag">创意延续</span>
+                    </div>
+                    <h3>绿皮熊</h3>
+                    <p class="subtitle">宝马雇主品牌系列作品</p>
+                    <p class="desc">延续"绿皮"IP的创意生命力，以绿皮熊为载体进一步深化宝马雇主品牌形象。承袭前作调性，在故事性与品牌信息之间找到精妙平衡，用温暖有趣的叙事展现团队创造力与品牌温度，持续强化雇主品牌认知。</p>
+                    <div class="tvc-data">
+                        <div class="tvc-data-item">
+                            <span class="number">系列</span>
+                            <span class="label">IP持续打造</span>
+                        </div>
+                        <div class="tvc-data-item">
+                            <span class="number">雇主</span>
+                            <span class="label">品牌深化</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TVC 3: 我们的三系 -->
+            <div class="tvc-card reveal">
+                <div class="video-wrapper">
+                    <video controls poster="我们的三系.jpg" preload="metadata">
+                        <source src="我们的三系.MP4" type="video/mp4">
+                        您的浏览器不支持视频播放。
+                    </video>
+                </div>
+                <div class="tvc-content">
+                    <div class="tvc-tags">
+                        <span class="tvc-tag">品牌TVC</span>
+                        <span class="tvc-tag">全案策划</span>
+                        <span class="tvc-tag">50周年</span>
+                    </div>
+                    <h3>我们的三系</h3>
+                    <p class="subtitle">宝马3系50周年TVC</p>
+                    <p class="desc">主导宝马3系50周年TVC全案策划，负责创意方向制定，主导供应商进行故事架构搭建与脚本撰写，把控项目预算与制作进度，跨部门合作推进投放落地。以情感共鸣为核心，串联品牌历史与用户记忆，打造里程碑式品牌内容。</p>
+                    <div class="tvc-data">
+                        <div class="tvc-data-item">
+                            <span class="number">No.1</span>
+                            <span class="label">视频号同类播放量</span>
+                        </div>
+                        <div class="tvc-data-item">
+                            <span class="number">1600+</span>
+                            <span class="label">点赞数</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TVC 4: Video JD -->
+            <div class="tvc-card reveal">
+                <div class="video-wrapper">
+                    <video controls poster="Video JD.jpg" preload="metadata">
+                        <source src="Video JD.MP4" type="video/mp4">
+                        您的浏览器不支持视频播放。
+                    </video>
+                </div>
+                <div class="tvc-content">
+                    <div class="tvc-tags">
+                        <span class="tvc-tag">招聘视频</span>
+                        <span class="tvc-tag">Video JD</span>
+                        <span class="tvc-tag">创意招聘</span>
+                    </div>
+                    <h3>宝马信息技术中心 Video JD</h3>
+                    <p class="subtitle">创新招聘视频</p>
+                    <p class="desc">打破传统招聘JD的文字局限，以视频形式生动呈现宝马信息技术中心的工作场景与团队氛围。通过视觉化叙事吸引技术人才，展现技术部门的创新活力与职业发展空间，让潜在候选人"看见"而非"阅读"职位价值。</p>
+                    <div class="tvc-data">
+                        <div class="tvc-data-item">
+                            <span class="number">Video</span>
+                            <span class="label">JD创新形式</span>
+                        </div>
+                        <div class="tvc-data-item">
+                            <span class="number">人才</span>
+                            <span class="label">吸引力提升</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Social Media -->
+<section class="social-section" id="social">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-label">Social Media</span>
+            <h2>社交媒体运营</h2>
+            <p>从品牌矩阵到个人IP，用内容精准触达目标受众</p>
+        </div>
+        <div class="social-grid reveal">
+            <div class="phone-mockup">
+                <img src="屏幕截图 2026-04-30 110945.jpg" alt="小红书主页">
+            </div>
+            <div class="social-content">
+                <h3>小红书个人IP运营</h3>
+                <p>独立运营女性人物向个人账号，从选题策划、文案撰写到AI辅助视频剪辑，全流程一手把控。两个月做到接近三千粉丝，产出多篇千赞爆款，具备敏锐的热点捕捉能力与精准的内容判断力。</p>
+                <p>内容品质获得国际品牌认可，合作Neoretin、Amazing Cosmatics、彼扬爱森等品牌商务。从人物故事到生活方式，始终保持高级的内容审美与扎实的文案功底，持续验证对平台流量逻辑与用户心理的深度理解。</p>
+                <a href="https://www.xiaohongshu.com/user/profile/5a8a6144e8ac2b7cbd7b5d02" target="_blank" class="xhs-btn" style="margin-top:20px;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                    访问小红书主页
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Articles -->
+<section class="articles-section" id="articles">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-label">Articles</span>
+            <h2>公众号深度文章</h2>
+            <p>具备敏锐的行业洞察力与扎实的文案功底，擅长从社会现象中挖掘深度选题，以真实人物故事为切口书写引发广泛共鸣的长篇内容，多篇作品阅读量达8w+至10w+</p>
+        </div>
+        <div class="articles-grid">
+            <div class="article-card reveal">
+                <div class="article-cover" style="background:url('工作地点自由封面.jpg') center/cover no-repeat,linear-gradient(135deg,#1a1a2e,#3a3a5e);"><span style="display:none;">36氪</span></div>
+                <div class="article-body">
+                    <h3>第一批实现工作地点自由的90后</h3>
+                    <p>深度调研自由职业群体生存现状，结合数据洞察与真实案例，探讨新一代职场人对"工作自由"的追求与现实挑战。</p>
+                    <div class="article-meta">
+                        <span class="source">36氪</span>
+                        <span class="views">8w+阅读</span>
+                    </div>
+                    <a href="https://36kr.com/p/1469166216858889" target="_blank" class="article-link">阅读原文 →</a>
+                </div>
+            </div>
+            <div class="article-card reveal">
+                <div class="article-cover" style="background:url('深圳流水线.jpg') center/cover no-repeat,linear-gradient(135deg,#1a1a2e,#3a3a5e);"><span style="display:none;">36氪</span></div>
+                <div class="article-body">
+                    <h3>那个从深圳流水线去了纽约做程序员的女工，最近失业了</h3>
+                    <p>以深圳职场人为样本，深度记录一线城市年轻打工者的真实生活状态，探讨收入、付出与生活品质之间的微妙关系。</p>
+                    <div class="article-meta">
+                        <span class="source">36氪</span>
+                        <span class="views">10w+阅读</span>
+                    </div>
+                    <a href="https://36kr.com/p/812289868087940" target="_blank" class="article-link">阅读原文 →</a>
+                </div>
+            </div>
+            <div class="article-card reveal">
+                <div class="article-cover" style="background:url('追逐风口的年轻人.jpg') center/cover no-repeat,linear-gradient(135deg,#1a1a2e,#3a3a5e);"><span style="display:none;">36氪</span></div>
+                <div class="article-body">
+                    <h3>"入职一月就被裁"，那些追逐风口的年轻人</h3>
+                    <p>观察追逐风口的年轻群体，从内容创业到新兴行业的浪潮中，记录他们在机会与焦虑之间的选择与成长。</p>
+                    <div class="article-meta">
+                        <span class="source">36氪</span>
+                        <span class="views">8w+阅读</span>
+                    </div>
+                    <a href="https://36kr.com/p/682288654598532" target="_blank" class="article-link">阅读原文 →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Reports -->
+<section class="reports-section" id="reports">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-label">White Papers</span>
+            <h2>行业数据报告白皮书</h2>
+            <p>擅长从海量数据中提炼核心洞察，独立策划撰写多份行业数据白皮书，相关话题登上微博热搜第一，全网曝光量3.3亿，以扎实的数据分析与叙事能力输出具有行业影响力的深度报告</p>
+        </div>
+        <div class="reports-grid">
+            <div class="report-card reveal">
+                <div class="report-cover" style="background:url('人工智能顶尖人才.jpg') center/cover no-repeat;"></div>
+                <div class="report-body">
+                    <h3>人工智能顶尖人才数据图鉴 2022</h3>
+                    <p>脉脉人才智库年度重磅白皮书，全面解析AI领域顶尖人才的分布特征、流动趋势与薪酬水平，相关话题登上微博热搜第一，曝光量3.3亿。</p>
+                    <div class="report-meta">
+                        <span class="year">2022</span>
+                        <span class="views" style="font-size:0.75rem;color:var(--accent);font-weight:600;">微博热搜第一</span>
+                        <a href="人工智能顶尖人才数据图鉴2022.pdf" target="_blank" class="report-link">查看报告 →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="report-card reveal">
+                <div class="report-cover" style="background:url('AIGC人才趋势.jpg') center/cover no-repeat;"></div>
+                <div class="report-body">
+                    <h3>2023 AIGC人才趋势报告</h3>
+                    <p>聚焦AIGC浪潮下的人才市场变革，分析生成式AI对各行业的冲击与机遇，以及新型人才的技能需求与培养路径。</p>
+                    <div class="report-meta">
+                        <span class="year">2023</span>
+                        <a href="2023 AIGC人才趋势报告.pdf" target="_blank" class="report-link">查看报告 →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="report-card reveal">
+                <div class="report-cover" style="background:url('乘势而上.jpg') center/cover no-repeat;"></div>
+                <div class="report-body">
+                    <h3>乘势而上 · 人才流动与迁徙 2022</h3>
+                    <p>年度人才流动全景报告，深度解读后疫情时代的人才迁徙规律、行业冷热分布与职场人择业心态变化。</p>
+                    <div class="report-meta">
+                        <span class="year">2022</span>
+                        <a href="《乘势而上·人才流动与迁徙2022》-20220412-V3.4-lin.pdf" target="_blank" class="report-link">查看报告 →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer id="contact">
+    <div class="footer-content">
+        <div class="footer-brand">
+            <h3>林宇箫</h3>
+            <p>品牌内容策划，擅长从品牌战略出发主导长视频/TVC全案策划与落地。用内容连接品牌与用户，用数据驱动创意决策。</p>
+        </div>
+        <div class="footer-links">
+            <h4>快速导航</h4>
+            <ul>
+                <li><a href="#about">关于我</a></li>
+                <li><a href="#tvc">TVC作品</a></li>
+                <li><a href="#social">社交媒体</a></li>
+                <li><a href="#articles">深度文章</a></li>
+            </ul>
+        </div>
+        <div class="footer-links">
+            <h4>联系方式</h4>
+            <div class="footer-contact">
+                <p>13120027231</p>
+                <p>13120027231@163.com</p>
+                <p>微信：yuxiaoxiao989</p>
+                <p>北京</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p> 林宇箫 · 品牌内容策划作品集</p>
+        <p>用内容创造价值</p>
+    </div>
+</footer>
+
+<script>
+    // Scroll reveal animation
+    const reveals = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    reveals.forEach(el => revealObserver.observe(el));
+
+    // Navbar background on scroll
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.06)';
+        } else {
+            navbar.style.boxShadow = 'none';
+        }
+    });
+
+    // Smooth scroll for nav links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
